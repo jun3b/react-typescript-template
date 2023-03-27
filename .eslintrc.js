@@ -42,11 +42,15 @@ module.exports = {
         endOfLine: 'auto',
       },
     ],
+    'react/no-unknown-property': ['error', { ignore: ['css'] }],
   },
   settings: {
+    'import/parsers': {
+      '@typescript-eslint/parser': ['.ts', '.tsx'],
+    },
     'import/resolver': {
-      node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      typescript: {
+        project: './tsconfig.json',
       },
     },
   },
